@@ -2,7 +2,7 @@ export default class ListTemplate {
     constructor(container) {
         this.container = container;
     }
-    render(item, heading, pos) {
+    render(item, heading) {
         const li = document.createElement("li");
         const h4 = document.createElement("h4");
         h4.innerHTML = heading;
@@ -10,11 +10,6 @@ export default class ListTemplate {
         const p = document.createElement("p");
         p.innerText = item.format();
         li.append(p);
-        if (pos === "start") {
-            this.container.prepend(li);
-        }
-        else {
-            this.container.append(li);
-        }
+        this.container.append(li);
     }
 }

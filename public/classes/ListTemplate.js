@@ -10,6 +10,12 @@ export default class ListTemplate {
         const p = document.createElement("p");
         p.innerText = item.format();
         li.append(p);
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "Delete";
+        deleteBtn.onclick = () => {
+            li.remove();
+        };
+        li.append(deleteBtn);
         this.container.append(li);
     }
 }
